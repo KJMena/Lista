@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f700ff7c;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+#app {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #732a9d;
+}
+
+.descripcion {
+    font-size: 0.9em;
+    color: #555;
+}
+
+input[type="text"] {
+    padding: 8px;
+    margin: 15px 0;
+    width: calc(100% - 16px);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.control-cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.control-cantidad button {
+    background-color: #b23fbd;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+.control-cantidad button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.cantidad-label {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.form-range {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.range-green {
+    background-color: #2a9d8f;
+}
+
+.range-orange {
+    background-color: #e9c46a;
+}
+
+.range-red {
+    background-color: #e76f51;
+}
+
+.tareas {
+    margin-top: 20px;
+}
+
+.tareas ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tareas li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.tareas li.completada {
+    text-decoration: line-through;
+    color: #e100ff;
+}
+
+.tareas-completas {
+    font-weight: bold;
+    margin-top: 15px;
+}

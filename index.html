@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+<body>
+    <section id="app">
+        <h2>Lista de Tareas en Vue</h2>
+        <p class="descripcion">
+            Aquí puedes gestionar tus tareas diarias y ajustar un contador para el seguimiento de tu progreso.
+        </p>
+
+        <input type="text" placeholder="Ingrese una nueva tarea" v-model="nuevaTarea">
+        <button @click="agregarTarea">Agregar Tarea</button>
+
+        <article>
+            <div class="control-cantidad">
+                <button @click="incrementar" :disabled="cantidad >= 100">+</button>
+                <span class="cantidad-label">{{ cantidad }}</span>
+                <button @click="disminuir" :disabled="cantidad <= 1">-</button>
+            </div>
+            <input type="range" 
+                   class="form-range" 
+                   min="1" 
+                   max="100" 
+                   v-model="cantidad" 
+                   :class="rangeColorClass">
+        </article>
+
+        <article class="tareas">
+            <ul>
+                <li v-for="(valor, index) in mensajes" 
+                    :key="index" 
+                    :class="{ completada: valor.estado === 'true' }" 
+                    @click="toggleEstado(index)">
+                    {{ valor.accion }} : {{ valor.estado === 'true' ? 'Completada' : 'Pendiente' }}
+                </li>
+            </ul>
+            <p class="tareas-completas">Tareas completadas: {{ cuantosMensajes() }} / {{ mensajes.length }}</p>
+        </article>
+
+        <h2>Realizado por </h2>
+        <h2>Karla Juliana Mena Villegas</h2>
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
